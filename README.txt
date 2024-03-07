@@ -1,28 +1,53 @@
-REMIX DEFAULT WORKSPACE
 
-Remix default workspace is present when:
-i. Remix loads for the very first time 
-ii. A new workspace is created with 'Default' template
-iii. There are no files existing in the File Explorer
+#### Marketplace System
 
-This workspace contains 3 directories:
+This project implements a simple marketplace system on the Ethereum blockchain. Users can list items for sale, purchase items, edit or delete items, and generate sales reports or purchase history.
 
-1. 'contracts': Holds three contracts with increasing levels of complexity.
-2. 'scripts': Contains four typescript files to deploy a contract. It is explained below.
-3. 'tests': Contains one Solidity test file for 'Ballot' contract & one JS test file for 'Storage' contract.
+#### Instructions for Building and Running the System:
 
-SCRIPTS
+1. **Installation**:
+   - Clone the repository: `git clone [Colyzo466/Marketplace-System]`
+   - Navigate to the project directory: `cd marketplace-system`
 
-The 'scripts' folder has four typescript files which help to deploy the 'Storage' contract using 'web3.js' and 'ethers.js' libraries.
+2. **Deployment**:
+   - Deploy the `ItemListing` contract on an Ethereum network.
+   - Make sure to configure the listing fee and fund the contract owner account.
 
-For the deployment of any other contract, just update the contract's name from 'Storage' to the desired contract and provide constructor arguments accordingly 
-in the file `deploy_with_ethers.ts` or  `deploy_with_web3.ts`
+3. **Interacting with the Contract**:
+   - Use a Web3 provider like MetaMask or Remix to interact with the deployed contract.
+   - Perform actions like listing items, editing items, purchasing items, and generating reports.
 
-In the 'tests' folder there is a script containing Mocha-Chai unit tests for 'Storage' contract.
+4. **Running Test Cases**:
+   - Run the provided test cases to ensure the correctness of the code.
+   - Test cases cover scenarios like listing items, editing items, purchasing items, and generating reports.
 
-To run a script, right click on file name in the file explorer and click 'Run'. Remember, Solidity file must already be compiled.
-Output from script will appear in remix terminal.
+#### Test Cases:
 
-Please note, require/import is supported in a limited manner for Remix supported modules.
-For now, modules supported by Remix are ethers, web3, swarmgw, chai, multihashes, remix and hardhat only for hardhat.ethers object/plugin.
-For unsupported modules, an error like this will be thrown: '<module_name> module require is not supported by Remix IDE' will be shown.
+1. **List Item**:
+   - Test listing an item with valid details.
+   - Test listing an item without paying the listing fee.
+
+2. **Edit Item**:
+   - Test editing an existing item with valid details.
+   - Test editing an item with an invalid item ID.
+
+3. **Delete Item**:
+   - Test deleting an existing item.
+   - Test deleting an item with an invalid item ID.
+
+4. **Purchase Item**:
+   - Test purchasing an item with sufficient funds and available quantity.
+   - Test purchasing an item with insufficient funds.
+   - Test purchasing an item with quantity out of stock.
+
+5. **Generate Sales Report**:
+   - Test generating a sales report with multiple items listed.
+
+6. **Generate Purchase History**:
+   - Test generating purchase history for a buyer with multiple purchases.
+
+### Conclusion:
+
+This marketplace system provides a basic framework for buying and selling items on the blockchain. By following the deployment, interaction, and testing instructions, users can effectively use and validate the functionality of the system.
+
+Feel free to adjust the instructions and test cases based on the specific requirements and functionalities of your marketplace system.
